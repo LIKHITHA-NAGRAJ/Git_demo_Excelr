@@ -1,0 +1,10 @@
+Git Commands
+the commands iam using 
+1. git --version
+2. git clone <link>
+3. cd ---> directory change
+4. ls ----> list
+5. git status  ----> tracking what all changed or changes in the files it is gonna track
+6. git add index.html
+7. git add readme.md
+8. git add.
