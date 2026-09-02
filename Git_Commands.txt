@@ -61,4 +61,17 @@ git branch -d feature1   # delete the branch (if we are in branch which needed t
 git push origin feature1  # To push
 
 ####### How to merge ##########
+git merge main
 
+
+git push origin feature1
+
+###   To find the DIFFERENT ######
+git diff main
+
+#####   HOW TO START WHEN IT IS BEEN STOPPED when to revoke #####
+git revoke -v
+git remote set-url origin <link>
+git add .
+git commit -m "<<<comment >>>"
+git push origin feature1 (like the branch name)
