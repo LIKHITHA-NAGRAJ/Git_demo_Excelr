@@ -1,5 +1,8 @@
 Git Commands
 the commands iam using 
+
+pull to local
+ These are pullout commands
 1. git --version
 2. git clone <link>
 3. cd ---> directory change
@@ -8,3 +11,54 @@ the commands iam using
 6. git add index.html
 7. git add readme.md
 8. git add.
+9. git commit -m " you_commands " 
+10. git push origin main
+\
+
+WE create a local and update to remote
+Creating a new repo from local
+1. cd ..
+2. mkdir <name>(LocalRepo)
+3. cd LocalRepo
+4. git init
+5. git status
+6. git add .
+7. git commit -m "//command"
+8. git remote add origin <create a repo without readme file,paste the link>
+9. git remote -v
+{
+    git remote -v
+origin  https://github.com/LIKHITHA-NAGRAJ/AUTOMATED-REPORT-GENERATION.git (fetch)
+origin  https://github.com/LIKHITHA-NAGRAJ/AUTOMATED-REPORT-GENERATION.git (push)
+}
+we will get these two
+10.git branch
+11.git push -u origin main
+
+
+
+
+
+fetch from origin
+git fetch origin
+
+MASTER to MAIN Branch
+git switch main
+
+
+git branch
+git checkout -b feature1
+git checkout main
+
+
+############    BRANCH    #############
+cd 
+git branch
+git checkout -b feature1   # Switch to feature1 from main
+git checkout main    # Switch to main 5from other
+git checkout -b feature2
+git branch -d feature1   # delete the branch (if we are in branch which needed to delete ,first we need to change to other branch and safely delete)
+git push origin feature1  # To push
+
+####### How to merge ##########
+
