@@ -74,6 +74,17 @@ git checkout main
 
 
 ############    BRANCH    #############
+branch -> since we are always looking forward to make a enhancement or experiment,
+we cant touch the actual files which is working ,so we create a branch such that already done implements
+are present and we are going to experiment with new things
+
+after successfull in my local files and if its good to get attched to the main server 
+we will create a pull request 
+
+
+###  PULL REQUEST ### after if its ok they will merge
+
+
 cd 
 git branch
 git checkout -b feature1   # Switch to feature1 from main
@@ -108,4 +119,6 @@ explanation
 4. git add ,commit-> Stages changes in your working directory and staging area,showing which files have been modified or are ready to be commited
 5. git log -> shows the history of all commits made in the repository,which is useful for finding specific commit ID to perform resets
 6. git reset -> used to unstage changes from a file
-7. 
+
+
+Bra
