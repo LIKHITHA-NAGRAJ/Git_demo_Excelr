@@ -1,5 +1,29 @@
 Git Commands
 the commands iam using 
+
+Distributed Version Control  -> Git
+which will have a track of all the changes made in the files,helps in collaboration,retrieve the last version .
+
+Types : 1. Local version control system    2. version control system(what if the server crashed ,so to make the copy every systems comes the distributed one) 3. distributed control system
+
+git config --global user.name "likhi"
+git config --global user.email "nagarajucnagarajuc7@gmail.com"
+to check -> git config --list
+
+
+Working directory  -> staging area (temp cart)  -> local repo   -> remote repo    #remote repo is a github,git is tool used to do these tasks
+                git add                       git commit        push(online)
+
+all these process or step is GIT
+GITHUB  -> repository
+
+Repository -> folder
+
+
+
+
+pull to local
+ These are pullout commands
 1. git --version
 2. git clone <link>
 3. cd ---> directory change
@@ -8,3 +32,93 @@ the commands iam using
 6. git add index.html
 7. git add readme.md
 8. git add.
+9. git commit -m " you_commands " 
+10.git remote add origin <create a repo without readme file,paste the link>
+11. git push origin main
+\
+
+WE create a local and update to remote
+Creating a new repo from local
+1. cd ..
+2. mkdir <name>(LocalRepo)
+3. cd LocalRepo
+4. git init
+5. git status
+6. git add .
+7. git commit -m "//command"
+8. git remote add origin <create a repo without readme file,paste the link>
+9. git remote -v
+{
+    git remote -v
+origin  https://github.com/LIKHITHA-NAGRAJ/AUTOMATED-REPORT-GENERATION.git (fetch)
+origin  https://github.com/LIKHITHA-NAGRAJ/AUTOMATED-REPORT-GENERATION.git (push)
+}
+we will get these two
+10.git branch
+11.git push -u origin main
+
+
+
+
+
+fetch from origin
+git fetch origin
+
+MASTER to MAIN Branch
+git switch main
+
+
+git branch
+git checkout -b feature1
+git checkout main
+
+
+############    BRANCH    #############
+branch -> since we are always looking forward to make a enhancement or experiment,
+we cant touch the actual files which is working ,so we create a branch such that already done implements
+are present and we are going to experiment with new things
+
+after successfull in my local files and if its good to get attched to the main server 
+we will create a pull request 
+
+
+###  PULL REQUEST ### after if its ok they will merge
+
+
+cd 
+git branch
+git checkout -b feature1   # Switch to feature1 from main
+git checkout main    # Switch to main 5from other
+git checkout -b feature2
+git branch -d feature1   # delete the branch (if we are in branch which needed to delete ,first we need to change to other branch and safely delete)
+git push origin feature1  # To push
+
+####### How to merge ##########
+git merge main
+creates a pull request also ..
+
+
+git push origin feature1
+
+###   To find the DIFFERENT ######
+git diff main
+
+#####   HOW TO START WHEN IT IS BEEN STOPPED when to revoke #####
+git revoke -v
+git remote set-url origin <link>
+git add .
+git commit -m "<<<comment >>>"
+git push origin feature1 (like the branch name)
+
+
+
+explanation
+1. git checkout -> used to switch between different branches in your local repo
+2. git pull origin -> downloads content from a remote repository and updates your local branch with the latest changes
+3. git diff -> Compares the differences between your current branch and another specified branch
+4. git add ,commit-> Stages changes in your working directory and staging area,showing which files have been modified or are ready to be commited
+5. git log -> shows the history of all commits made in the repository,which is useful for finding specific commit ID to perform resets
+6. git reset -> used to unstage changes from a file
+
+
+Bra
