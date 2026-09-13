@@ -1,0 +1,117 @@
+###   DOCKER   ####
+Docker is a tool used to solve the "It works on my machine" problem in software development
+WHen teams build applications,different members often have different members often have different
+operating systems or software versions installed,which leads to configuration errors and compatibility issues
+
+
+###     Key Purpose     ###
+* Environment Consistency (Portable): Docker packages an application and all its dependencies (libraries,databases,configurations) into a single,portable unit called a container.
+this ensures that the application runs exacctly the same way,regardless of whose machine it is on.
+* Lightweight Virtualization  : Unlike Virtual Machines,which virtualize the entire hardware layer,Docker containers share
+the hosts operating system kernel.this makes them significantly faster,smaller,and more efficient to start and run.
+* Simplified Development : You can run complex services like databases(eg : MongoDB) or web servers
+inside isolated containers without needing to install them directly on your local computer
+* Easy Orchestration  :with tools like Docker compose,developers can define and manage multiple containers at once,making it simple to spin
+up or tear down entire application stacks with a single command.
+
+
+####      Docker Container      ####
+* docker container : a single unit or bundle of applications along with dependencies are packed as a unit
+1.portable
+2.lightweight
+
+1. docker image ------> multiple instances(containers)
+
+####  Docker Image [ BLUE PRINT ]#####
+1. executable file ,has instructions to build a containers  (files)
+same as class ->object ,here it is a class
+2.An image is a read only,static snapshot of your application and its entire environment,including code,libraries
+dependencies,and configuration files.
+3. It serves as a blueprint or a template,you dont run an image directly;rather,it provides the indtructions needed to create a running environment
+4.Images are composed of multiple layers,which allows for efficient storage and reuse of shared components when building or downloading then
+
+
+
+### Docker Container (The running instance ) [object]
+storage is mainly in containers
+
+A container is the live,executable instance created from a Docker image.When you run an image,Docker create an isolated
+environment where your code actually executes
+* isolation  : Containers provide a sandbox that keeps your application and its dependencies separate from the host system
+Runtime : While an image is a static file ,a container is a process running on your machine.
+* Lifecycle : You can start,stop ,pause,and delete containers at any time.When you stop a container,the environment
+is typically discarded,though you can use volumes to save persistent data.
+
+###   DockerHub   ###
+contains all the images of docker to download
+->playstore,like github
+
+for ubantu container can run in interactive mode
+docker run -it ubantu
+
+
+COMMANDS
+
+1. docker (all docker commands)
+2. docker --v (for version)
+3. docker pull hello-world (used to download the image)
+3. docker pull mysql:8.0(for specific versions)
+4. docker images (to check what all images were present)
+5. docker run <image_name>   (container get created)
+6. docker run -it <image_name> (interactive like input or output)
+7. docker ps -a (all containers lists to check)
+8. docker ps (ruuning containers list)
+9. docker start <container_name/container_id>
+10.docker stop  <container_name/container_id>
+11. docker rmi <remove image>
+12. docker rm  <remove container>
+13, docker run -d mysql (detach )
+14. docker run --name <container_name> -d <image_name>(custom naming)
+
+
+green dot ---> specifies one or the other container used this images
+
+
+
+######     The Docker daemon (technically called `dockerd`) is the core background service that powers the entire Docker ecosystem. Think of it as the "brain" of your Docker environment—it runs silently on your host system to manage all the heavy lifting.
+
+####   Key Responsibilities   ######
+* Listening for Requests: It constantly listens for API requests sent by the Docker Client (the CLI you use to run commands like `docker run` or `docker build`).
+* Orchestration: It manages the entire lifecycle of Docker objects, including:
+* Containers: Starting, stopping, and running them.
+* Images: Pulling them from registries (like Docker Hub) and building them.
+* Networks & Volumes: Managing how containers communicate and store persistent data.
+
+How it Works
+1.  Client-Daemon Interaction: When you type a command into your terminal, the Docker Client sends that instruction as an API request to the Docker daemon.
+2.  Execution: The daemon receives the command, checks the local system (e.g., "Does this image exist locally?"), and executes the necessary actions to satisfy the request.
+3.  Background Process: Unlike the Docker Client, which is an interactive tool, the daemon is a persistent background process that runs continuously as long as Docker is active on your machine.
+
+In essence, the Docker Client is just a user-friendly wrapper, while the Docker daemon is the underlying engine that makes containerization possible.
+
+
+######    Docker Images    ########
+
+
+container
+    |
+layer 2
+    |
+layer 1
+    | 
+base layer
+Port Binding
+
+
+
+Port binding (37:11) is a critical feature in Docker that allows you to connect a specific port on your host machine to a port inside a Docker container. 
+
+Why it matters:
+Isolation: By default, containers have their own isolated network and ports (37:27). If a container is running a service on port `3306`, it is not automatically accessible from your host machine.
+Connectivity: By mapping the host port to the container port, you can send requests from your local machine to the service running inside the container (39:00).
+
+How it works:
+1.Use the `-p` flag when running a container: `docker run -p [hostport]:[containerport] [image_name]` (39:12).
+2.Example: Mapping host port `8080` to container port `3306` enables you to reach the containerized service through `localhost:8080` (39:26).
+3.Important Rule: You cannot bind multiple containers to the same port on the host machine simultaneously. 
+If you try to run a second container on an already occupied host port, it will fail (41:18). Instead, you must assign a different host port for each container (42:01).
